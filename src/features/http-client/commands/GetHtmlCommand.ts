@@ -1,4 +1,5 @@
 export interface GetHtmlCommand {
-    Url: string;
-    UseCache?: boolean;
+    url: string;
+    useCache?: boolean;
+    useBasicHttpClient?: boolean;
 }

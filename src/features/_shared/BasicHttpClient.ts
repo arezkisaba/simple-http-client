@@ -1,6 +1,6 @@
 import he from 'he'; 
-import IHttpClient from './contracts/IHttpClient';
 import { injectable } from 'tsyringe';
+import { HttpClientResponse, IHttpClient } from './contracts/IHttpClient';
 
 @injectable()
 export class BasicHttpClient implements IHttpClient {
@@ -8,9 +8,11 @@ export class BasicHttpClient implements IHttpClient {
     constructor() {
     }
 
-    async getHtml(url: string): Promise<string> {
+    async getHtml(url: string): Promise<HttpClientResponse> {
         const response = await fetch(url, {
             headers: {
+                method: 'GET',
+                redirect: 'follow',
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
             }
         });
@@ -21,6 +23,9 @@ export class BasicHttpClient implements IHttpClient {
         
         const htmlContent = await response.text();
         const decodedHTML = he.decode(htmlContent);
-        return decodedHTML;
+        return {
+            html: decodedHTML,
+            url: response.url
+        };
     }
 }

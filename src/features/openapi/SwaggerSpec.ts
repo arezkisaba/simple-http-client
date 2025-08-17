@@ -18,11 +18,11 @@ const options = {
                 GetHtmlResponse: {
                     type: 'object',
                     properties: {
-                        Html: {
+                        html: {
                             type: 'string',
                             description: 'The HTML content of the requested URL',
                         },
-                        FromCache: {
+                        fromCache: {
                             type: 'boolean',
                             description: 'Indicates if the response was served from cache',
                             default: false,
@@ -32,11 +32,11 @@ const options = {
                 GetHtmlCommand: {
                     type: 'object',
                     properties: {
-                        Url: {
+                        url: {
                             type: 'string',
                             description: 'The URL to fetch HTML content from',
                         },
-                        UseCache: {
+                        useCache: {
                             type: 'boolean',
                             default: true,
                             description: 'Whether to use cache for the request',

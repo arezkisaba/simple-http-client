@@ -1,4 +1,5 @@
 export interface GetHtmlResponse {
-    Html: string;
-    FromCache?: boolean;
+    html: string;
+    url: string;
+    fromCache?: boolean;
 }
