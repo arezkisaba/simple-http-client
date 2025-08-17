@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Backend - Build",
+            "type": "shell",
+            "command": "npx tsc -b && npx tsc-esm-fix dist/",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$tsc",
+            "isBackground": false,
+            "presentation": {
+                "reveal": "silent",
+                "close": true
+            }
+        }
+    ]
+}

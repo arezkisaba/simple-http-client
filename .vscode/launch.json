@@ -1,0 +1,73 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Backend - Debug",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "node",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/src/index.ts",
+            "envFile": "${workspaceFolder}/.env",
+            "preLaunchTask": "Backend - Build",
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ],
+            "console": "integratedTerminal",
+            "sourceMaps": true,
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/**",
+                "!**/node_modules/**"
+            ],
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "restart": true
+        },
+        {
+            "name": "Backend Tests - Debug all",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "node",
+            "runtimeArgs": [
+                "--inspect-brk",
+                "${workspaceFolder}/node_modules/.bin/jest",
+                "--runInBand"
+            ],
+            "port": 9229,
+            "console": "integratedTerminal",
+            "windows": {
+                "runtimeArgs": [
+                    "--inspect-brk",
+                    "${workspaceFolder}/node_modules/jest/bin/jest.js",
+                    "--runInBand"
+                ]
+            },
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Backend - Build"
+        },
+        {
+            "name": "Backend Tests - Debug current",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "node",
+            "runtimeArgs": [
+                "--inspect-brk",
+                "${workspaceFolder}/node_modules/.bin/jest",
+                "${relativeFile}",
+                "--runInBand"
+            ],
+            "port": 9229,
+            "console": "integratedTerminal",
+            "windows": {
+                "runtimeArgs": [
+                    "--inspect-brk",
+                    "${workspaceFolder}/node_modules/jest/bin/jest.js",
+                    "--runInBand"
+                ]
+            },
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Backend - Build"
+        }
+    ]
+}
