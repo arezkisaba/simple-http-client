@@ -42,11 +42,7 @@ Health check endpoint for monitoring application status.
 
 ## Environment Variables
 
-Create a `.env` file with the following variables:
-
-```env
-APP_PORT=4445
-```
+Create a `.env` like `.env.example`:
 
 ## Docker Setup
 
