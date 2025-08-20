@@ -46,9 +46,6 @@ Create a `.env` file with the following variables:
 
 ```env
 APP_PORT=4445
-NODE_ENV=development
-PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ```
 
 ## Docker Setup
