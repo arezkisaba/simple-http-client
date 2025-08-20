@@ -40,10 +40,6 @@ Fetch HTML content from a URL using either basic HTTP or headless browser.
 ### GET /healthcheck
 Health check endpoint for monitoring application status.
 
-## Environment Variables
-
-Create a `.env` like `.env.example`:
-
 ## Docker Setup
 
 ### Prerequisites
