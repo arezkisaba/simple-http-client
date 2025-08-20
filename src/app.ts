@@ -4,6 +4,7 @@ import swaggerUi from 'swagger-ui-express';
 import './container';
 import SwaggerSpec from './features/openapi/SwaggerSpec';
 import HttpClientRoutes from './features/http-client/routes/HttpClientRoutes';
+import HealthcheckRoutes from './features/healthcheck/routes/HealthcheckRoutes';
 
 const app: Application = express();
 
@@ -16,6 +17,7 @@ app.use(cors({
 }));
 console.log('CORS enabled for all origins');
 
+app.use(HealthcheckRoutes);
 app.use(HttpClientRoutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(SwaggerSpec));
 

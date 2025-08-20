@@ -64,7 +64,6 @@ router.post('/api/http-client', async (req: Request, res: Response) => {
         
         res.status(200).json({ html: response.html, url: response.url, fromCache: false } as GetHtmlResponse);
     } catch (error) {
-        console.error('HTTP client request failed:', error);
         const errorResponse = {
             message: error instanceof Error ? error.message : 'Unknown error occurred',
             timestamp: new Date().toISOString(),

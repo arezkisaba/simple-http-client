@@ -29,5 +29,4 @@ COPY ./package*.json ./
 RUN npm ci --production
 COPY --from=builder /app/dist ./dist
 
-EXPOSE ${APP_PORT}
 CMD ["node", "dist/index.js"]
